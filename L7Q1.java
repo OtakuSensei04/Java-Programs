@@ -9,12 +9,14 @@ import java.util.*;
       
       void calc_total(String Vehicle_id,float[] Cost)
       {
+          this.Vehicle_id=Vehicle_id;
+          this.Cost=Cost;
           for(int j=0;j<3;j++)
           this.Total=this.Total+Cost[j];
       }
       void calc_grand_total()
       {
-          this.Grand_total=this.Total*0.1f;
+          this.Grand_total=this.Total-(this.Total*0.1f);
           
       }
       
@@ -52,12 +54,14 @@ public class Main
 	    }
 	   
             int hh=cr.highest_grand_price(obj,n);
+           // System.out.println("hh= "+hh);
           System.out.println("Highest Grand Total: "+obj[hh].Grand_total);
           System.out.println(" Vehicle id: "+obj[hh].Vehicle_id);
 	        
+	        System.out.println(" Vehicle's base, exercise duty and sales tax: ");
 	        for(int p=0;p<3;p++)
 	        {
-	        System.out.println(" Vehicle's base, exercise duty and sales tax: "+obj[hh].Cost[p]);
+	        System.out.println(obj[hh].Cost[p]);
 	        }
       
     }
